@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ListItem from "./src/components/molecules/ListItem/index";
+import Application from "./src/components/pages/Application/index";
 
 class App extends React.Component {
   render() {
-    return <div>hello</div>;
+    return <Application />;
   }
 }
 

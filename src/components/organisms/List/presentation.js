@@ -5,7 +5,7 @@ const List = ({ items = [], ...options }) => {
   return (
     <ul>
       {items.map((item = {}, index) => (
-        <ListItem key={item.id || index} {...options}>
+        <ListItem key={item.id || index} {...options} {...item}>
           {item.content}
         </ListItem>
       ))}

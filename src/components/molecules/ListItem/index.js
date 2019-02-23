@@ -7,7 +7,7 @@ const ListItem = ({ id, children, done, handleChange, handleDelete }) => {
     <li>
       <CheckBox checked={done} onChange={handleChange} />
       {children}
-      <WarningButton onClick={handleDelete(id)} />
+      <WarningButton onClick={() => handleDelete(id)}>Delete</WarningButton>
     </li>
   );
 };

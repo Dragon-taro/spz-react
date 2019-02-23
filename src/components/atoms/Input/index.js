@@ -6,4 +6,4 @@ const inputFactory = type => props => {
 };
 
 export const TextInput = inputFactory("text");
-export const Checkbox = inputFactory("checkbox");
+export const CheckBox = inputFactory("checkbox");
