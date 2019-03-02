@@ -6,7 +6,7 @@ const Form = ({ value, handleSubmit, handleChange }) => {
   return (
     <div>
       <TextInput value={value} onChange={handleChange} />
-      <PrimaryButton onClick={handleSubmit}>Add</PrimaryButton>
+      <PrimaryButton onClick={handleSubmit}>Add</PrimaryButton>
     </div>
   );
 };
