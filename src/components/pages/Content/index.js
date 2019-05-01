@@ -1,12 +1,16 @@
 import React, { Fragment } from "react";
-import ListContainer from "../../organisms/TodoList/container";
-import FormContainer from "../../organisms/Form/container";
+import SingleTodoContainer from "../../organisms/SingleTodo/container";
 
-const Content = () => {
+const Content = props => {
+  const {
+    match: {
+      params: { id }
+    }
+  } = props;
+
   return (
     <Fragment>
-      <FormContainer />
-      <ListContainer />
+      <SingleTodoContainer id={id} />
     </Fragment>
   );
 };

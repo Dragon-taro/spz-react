@@ -5,7 +5,7 @@ import createHistory from "history/createBrowserHistory";
 import { Router, Route, Switch } from "react-router-dom";
 import reducers from "../../../redux/reducers";
 import Index from "../../pages/Index/index";
-import Content from "../../pages/Content";
+import Content from "../../pages/Content/index";
 
 const store = createStore(reducers);
 const history = createHistory();
@@ -16,7 +16,7 @@ const Application = () => {
       <Provider store={store}>
         <Switch>
           <Route exact path="/" component={Index} />
-          <Route exact path="/" component={Content} />
+          <Route exact path="/todo/:id" component={Content} />
         </Switch>
       </Provider>
     </Router>
