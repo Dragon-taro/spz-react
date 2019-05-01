@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-import ListContainer from "../../organisms/List/container";
+import ListContainer from "../../organisms/TodoList/container";
 import FormContainer from "../../organisms/Form/container";
 
-const AppTemplate = () => {
+const Content = () => {
   return (
     <Fragment>
       <FormContainer />
@@ -11,4 +11,4 @@ const AppTemplate = () => {
   );
 };
 
-export default AppTemplate;
+export default Content;

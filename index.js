@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Application from "./src/components/pages/Application/index";
+import Application from "./src/components/apps/Application/index";
 
 class App extends React.Component {
   render() {

@@ -2,10 +2,10 @@ import React from "react";
 import { TextInput } from "../../atoms/Input";
 import { PrimaryButton } from "../../atoms/Button";
 
-const Form = ({ value, handleSubmit, handleChange }) => {
+const Form = ({ form, handleSubmit, handleChange }) => {
   return (
     <div>
-      <TextInput value={value} onChange={handleChange} />
+      <TextInput value={form} onChange={handleChange} />
       <PrimaryButton onClick={handleSubmit}>Add</PrimaryButton>
     </div>
   );

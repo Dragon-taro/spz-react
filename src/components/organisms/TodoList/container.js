@@ -1,8 +1,8 @@
-import List from "./presentation";
+import TodoList from "./presentation";
 import { connect } from "react-redux";
 import { deleteTodo, putTodo } from "../../../redux/actions";
 
-const mapStateToProps = ({ todo }) => ({ todo });
+const mapStateToProps = ({ todos }) => ({ todos });
 
 const mapDispatchToProps = dispatch => ({
   deleteTodo: todos => dispatch(deleteTodo(todos)),
@@ -10,25 +10,28 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mergeProps = (stateProps, dispatchProps) => {
-  const { todo } = stateProps;
+  const { todos } = stateProps;
   const { deleteTodo, putTodo } = dispatchProps;
+
   return {
     handleDelete: id => {
-      const _todo = todo.filter(t => t.id !== id);
-      deleteTodo(_todo);
+      const _todos = todos.filter(t => t.id !== id);
+      deleteTodo(_todos);
     },
     handleChange: id => {
-      const _todo = todos.map(t => (t.id === id ? { ...t, done: !t.done } : t));
-      putTodo(_todo);
+      const _todos = todos.map(t =>
+        t.id === id ? { ...t, done: !t.done } : t
+      );
+      putTodo(_todos);
     },
-    items: todo
+    todos
   };
 };
 
-const ListContainer = connect(
+const TodoListContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps
-)(List);
+)(TodoList);
 
-export default ListContainer;
+export default TodoListContainer;

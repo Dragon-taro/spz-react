@@ -11,18 +11,18 @@ const mapDispatchToProps = dispatch => ({
 
 // mergePropsの書き方を統一したかった、、
 const mergeProps = (stateProps, dispatchProps) => {
-  const { form, todo = [] } = stateProps;
+  const { form, todos = [] } = stateProps;
   const { addTodo, changeValue } = dispatchProps;
   return {
     handleChange: e => changeValue(e.target.value),
     handleSubmit: () => {
-      const id = todo.length + 1;
+      const id = todos.length + 1;
       const _todo = { id, content: form, done: false };
       addTodo(_todo);
       changeValue("");
     },
-    todo,
-    value: form // ここの命名もミスってる、、
+    todos,
+    form
   };
 };
 
