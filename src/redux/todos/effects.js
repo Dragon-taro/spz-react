@@ -1,6 +1,7 @@
 import { loadTodosSuccess } from "./action";
 
-// dispatchする関数のpromiseを返す関数
+// dispatchを実行する関数のpromiseを返す関数
+// async関数を使っているためにpromiseを返す関数になっている
 export const loadTodos = () => async dispatch => {
   const path = "/api/todos";
   const header = {
@@ -15,6 +16,8 @@ export const loadTodos = () => async dispatch => {
 
   dispatch(loadTodosSuccess(todos));
 };
+
+// 以下説明用のコードで使ってない
 
 // アロー関数とasync/awaitなしで書いたバージョン
 function loadTodosWithoutArrowFunctionAndAsync() {

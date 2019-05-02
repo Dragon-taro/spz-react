@@ -3,6 +3,7 @@ import ListItem from "../../molecules/ListItem/index";
 import styles from "./style.css";
 
 const TodoList = ({ todos = [], loadTodos, ...options }) => {
+  // hooks
   useEffect(() => {
     // 初期値がなかったらサーバーに取りに行く
     if (!todos.length) loadTodos();

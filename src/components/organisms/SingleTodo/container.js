@@ -6,6 +6,8 @@ const mapStateToProps = ({ todos }) => ({ todos });
 const mergeProps = (stateProps, _, ownProps) => {
   const { todos } = stateProps;
   const { id } = ownProps;
+
+  // 表示すべきidのtodoを取ってくる
   const todo = todos.find(t => t.id == id);
 
   return { todo };
