@@ -31,7 +31,7 @@
   "scripts": {
     "watch": "npx webpack --mode development --watch",
     "build": "npx webpack --mode production",
-    "start": "npx http-server"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC"
