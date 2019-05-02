@@ -26,7 +26,7 @@ app.use(express.static("static"));
 // サーバーのデータはオンメモリで管理（ただの変数）
 
 // 初期値
-app.todo = [
+app.todos = [
   {
     id: 1,
     title: "hello world!",
@@ -37,32 +37,33 @@ app.todo = [
 
 // todoを全部返す
 app.get("/api/todos", (req, res) => {
-  res.json(app.todo);
+  res.json(app.todos);
 });
 
+// 使ってないが以下は一応簡易なCRUDのapi
 // todoを追加
 app.post("/api/todos", (req, res) => {
   const newTodo = {
-    id: app.todo.length + 1,
+    id: app.todos.length + 1,
     done: false,
     ...req.body
   };
-  app.todo = [...app.todo, newTodo];
-  res.json(app.todo);
+  app.todos = [...app.todos, newTodo];
+  res.json(app.todos);
 });
 
 // todoの削除
 app.delete("/api/todos/:id", (req, res) => {
   const id = req.params.id;
-  app.todo = app.todo.filter(t => t.id != id);
-  res.json(app.todo);
+  app.todos = app.todos.filter(t => t.id != id);
+  res.json(app.todos);
 });
 
 // todoの更新
 app.put("/api/todos/:id", (req, res) => {
   const id = req.params.id;
-  app.todo = app.todo.map(t => (t.id == id ? req.body : t));
-  res.json(app.todo);
+  app.todos = app.todos.map(t => (t.id == id ? req.body : t));
+  res.json(app.todos);
 });
 
 app.listen(port, function() {

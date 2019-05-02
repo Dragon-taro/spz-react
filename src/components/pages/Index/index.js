@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ListContainer from "../../organisms/TodoList/container";
 import AddTodoContainer from "../../organisms/AddTodo/container";
 import OneColumn from "../../atoms/OneColumn";

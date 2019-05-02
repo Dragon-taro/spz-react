@@ -1,7 +1,8 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./index.js",
+  // generatorがバグるからpolyfill入れてる
+  entry: ["babel-polyfill", "./index.js"],
   output: {
     path: path.join(__dirname, "static/js"),
     filename: "bundle.js"
@@ -21,11 +22,11 @@ module.exports = {
             presets: ["@babel/preset-env", "@babel/preset-react"]
           }
         }
-      }, 
+      },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader?modules'],
-      },
+        loaders: ["style-loader", "css-loader?modules"]
+      }
     ]
   }
 };

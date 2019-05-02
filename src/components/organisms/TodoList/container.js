@@ -1,17 +1,19 @@
 import TodoList from "./presentation";
 import { connect } from "react-redux";
 import { deleteTodo, putTodo } from "../../../redux/actions";
+import { loadTodos } from "../../../redux/todos/effects";
 
 const mapStateToProps = ({ todos }) => ({ todos });
 
 const mapDispatchToProps = dispatch => ({
   deleteTodo: todos => dispatch(deleteTodo(todos)),
-  putTodo: todos => dispatch(putTodo(todos))
+  putTodo: todos => dispatch(putTodo(todos)),
+  loadTodos: () => dispatch(loadTodos())
 });
 
 const mergeProps = (stateProps, dispatchProps) => {
   const { todos } = stateProps;
-  const { deleteTodo, putTodo } = dispatchProps;
+  const { deleteTodo, putTodo, loadTodos } = dispatchProps;
 
   return {
     handleDelete: id => {
@@ -24,6 +26,7 @@ const mergeProps = (stateProps, dispatchProps) => {
       );
       putTodo(_todos);
     },
+    loadTodos,
     todos
   };
 };

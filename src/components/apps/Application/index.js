@@ -1,13 +1,14 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import createHistory from "history/createBrowserHistory";
 import { Router, Route, Switch } from "react-router-dom";
 import reducers from "../../../redux/reducers";
 import Index from "../../pages/Index/index";
 import Content from "../../pages/Content/index";
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(thunk));
 const history = createHistory();
 
 const Application = () => {
