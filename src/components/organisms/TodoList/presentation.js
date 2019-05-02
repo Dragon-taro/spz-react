@@ -7,7 +7,7 @@ const TodoList = ({ todos = [], ...options }) => {
     <ul className={styles.list}>
       {todos.map((item = {}, index) => (
         <ListItem key={item.id || index} {...options} {...item}>
-          {item.content}
+          {item.title}
         </ListItem>
       ))}
     </ul>

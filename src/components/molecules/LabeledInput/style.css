@@ -1,0 +1,10 @@
+.labeledInput span {
+  color: #666;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.labeledInput input {
+  width: 100%;
+}

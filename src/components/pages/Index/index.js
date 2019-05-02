@@ -1,13 +1,15 @@
 import React, { Fragment } from "react";
 import ListContainer from "../../organisms/TodoList/container";
-import FormContainer from "../../organisms/Form/container";
+import AddTodoContainer from "../../organisms/AddTodo/container";
+import OneColumn from "../../atoms/OneColumn";
 
 const Index = () => {
   return (
-    <Fragment>
-      <FormContainer />
+    <OneColumn>
+      <h1>Todo App</h1>
+      <AddTodoContainer />
       <ListContainer />
-    </Fragment>
+    </OneColumn>
   );
 };
 

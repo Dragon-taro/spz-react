@@ -1,9 +1,11 @@
 .button {
   border: none;
-  padding: 5px 10px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
   transition-duration: 0.2s;
   border-radius: 3px;
+  min-width: 100px;
 }
 
 .button:hover {
@@ -18,4 +20,10 @@
 .warning {
   color: #fff;
   background-color: #cc3300;
+}
+
+.small {
+  padding: 5px 10px;
+  font-size: 12px;
+  min-width: 0;
 }

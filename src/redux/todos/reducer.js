@@ -1,6 +1,8 @@
 import { ADD_TODOS, DELETE_TODOS, PUT_TODOS } from "./action";
 
-const initState = [{ id: 1, content: "hello world!", done: false }];
+const initState = [
+  { id: 1, title: "hello world!", content: "init todo content", done: false }
+];
 
 export const todos = (state = initState, { type, payload }) => {
   switch (type) {

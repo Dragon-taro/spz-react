@@ -11,7 +11,9 @@ const ListItem = ({ id, children, done, handleChange, handleDelete }) => {
       <Link to={`/todo/${id}`}>
         <span>{children}</span>
       </Link>
-      <WarningButton onClick={() => handleDelete(id)}>Delete</WarningButton>
+      <WarningButton onClick={() => handleDelete(id)} size="small">
+        Delete
+      </WarningButton>
     </li>
   );
 };

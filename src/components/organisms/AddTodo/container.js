@@ -1,4 +1,4 @@
-import Form from "./presentation";
+import AddTodo from "./presentation";
 import { addTodo, changeValue } from "../../../redux/actions";
 import { connect } from "react-redux";
 
@@ -9,27 +9,28 @@ const mapDispatchToProps = dispatch => ({
   changeValue: value => dispatch(changeValue(value))
 });
 
-// mergePropsの書き方を統一したかった、、
 const mergeProps = (stateProps, dispatchProps) => {
   const { form, todos = [] } = stateProps;
   const { addTodo, changeValue } = dispatchProps;
   return {
-    handleChange: e => changeValue(e.target.value),
+    handleChange: e => {
+      const _form = { ...form, [e.target.name]: e.target.value };
+      changeValue(_form);
+    },
     handleSubmit: () => {
       const id = todos.length + 1;
-      const _todo = { id, content: form, done: false };
+      const _todo = { id, ...form, done: false };
       addTodo(_todo);
-      changeValue("");
+      changeValue({ title: "", content: "" });
     },
-    todos,
     form
   };
 };
 
-const FormContainer = connect(
+const AddTodoContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps
-)(Form);
+)(AddTodo);
 
-export default FormContainer;
+export default AddTodoContainer;

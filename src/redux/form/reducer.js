@@ -1,6 +1,6 @@
 import { CHANGE_VALUE } from "./action";
 
-const initState = "";
+const initState = { title: "", content: "" };
 
 export const form = (state = initState, { type, payload }) => {
   switch (type) {
