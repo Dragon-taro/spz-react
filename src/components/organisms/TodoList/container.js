@@ -1,7 +1,6 @@
 import TodoList from "./presentation";
 import { connect } from "react-redux";
-import { deleteTodo, putTodo } from "../../../redux/actions";
-import { loadTodos } from "../../../redux/todos/effects";
+import { deleteTodo, putTodo, loadTodos } from "../../../redux/actions";
 
 // 必要なstateだけを取得
 const mapStateToProps = ({ todos }) => ({ todos });
