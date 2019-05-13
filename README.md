@@ -18,8 +18,12 @@ $ npm start
 docker でサクッと build
 
 ```shell
-docker-compose up
+$ git clone https://github.com/Dragon-taro/spz-react.git
+$ cd spz-react
+$ docker-compose up
 ```
+
+どっちも[](localhost:8080)に立ち上がります。
 
 ちなみに docker の方は multi stage build 使ってます。一個目のコンテナで react の build をして二個目のコンテナに渡してます。
 
