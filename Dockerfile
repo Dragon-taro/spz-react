@@ -3,6 +3,7 @@ FROM node:10.13-alpine AS build-env
 
 COPY . .
 
+RUN npm i
 RUN npm run build
 
 # production
