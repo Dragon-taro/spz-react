@@ -4,7 +4,7 @@ module.exports = {
   // generatorがバグるからpolyfill入れてる
   entry: ["babel-polyfill", "./index.js"],
   output: {
-    path: path.join(__dirname, "static/js"),
+    path: path.join(__dirname, "server/static/js"),
     filename: "bundle.js"
   },
   resolve: {

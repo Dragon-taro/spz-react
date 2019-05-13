@@ -6,12 +6,22 @@
 
 ## 起動方法
 
+ローカルで build
+
 ```shell
 $ git clone https://github.com/Dragon-taro/spz-react.git
 $ cd spz-react
 $ npm i
 $ npm start
 ```
+
+docker でサクッと build
+
+```shell
+docker-compose up
+```
+
+ちなみに docker の方は multi stage build 使ってます。一個目のコンテナで react の build をして二個目のコンテナに渡してます。
 
 ## 構成
 
